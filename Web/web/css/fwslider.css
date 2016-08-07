@@ -1,0 +1,332 @@
+/* ------------------------------- 3. Slider Styles ------------------------------- */
+body > div.images-slider {
+	margin-bottom: -5px;
+}
+#fwslider {
+    position: relative;
+    width:100%;
+}
+#fwslider .slide {
+    display: none;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: 0;
+    width:100%;
+}
+.slide img {
+    width: 100%;
+}
+#fwslider .slidePrev {
+    position: absolute;
+    top:50%;
+    left:-50px;   
+    z-index: 10;
+}
+#fwslider .slidePrev span {
+	background-image: url("../images/sliderarrows.png");
+	width: 60px;
+	height: 60px;
+	float: left;
+	background-position: 13px 0px;
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+#fwslider .slideNext {
+    position: absolute;
+    top:50%;
+    right:-50px;  
+    z-index: 10;
+}
+#fwslider .slideNext span {
+ 	 background-image: url("../images/sliderarrows.png");
+	width: 60px;
+	height: 60px;
+	float: left;
+	background-position: -70px 0px;
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+#fwslider .timers {
+    height:4px;
+    position: absolute;
+    bottom:15px;
+    right:0;
+    z-index: 3;
+}
+.slide-btns{
+	margin-top: 0.5em;
+}
+.slide-btns ul li{
+	display:inline-block;
+	margin-right: 1em;
+}
+.slide-btns ul li a{
+	color: #FFF;
+	font-size: 0.72em;
+	text-transform: uppercase;
+	border:solid 2px #FFF;
+	border-radius: 5px;
+	padding: 0.8em 1.2em;
+	transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+	display: block;
+}
+.slide-btns ul li a:hover{
+	background:#1DD2AF;
+	border:solid 2px #1DD2AF;
+}
+#fwslider .timer {
+    height:4px;
+    width:40px;
+    background-color: #fff;
+    float:left;
+    margin-right: 10px;
+}
+#fwslider .progress {
+    height:4px;
+    width:0%;
+    background-color:#2C3E50;
+    float:left;
+}
+#fwslider .slide_content {
+    top:0;
+    left:0;
+    position: absolute;
+    width:100%;
+    height:100%;
+    min-height:650px;
+}
+#fwslider .slide_content_wrap { /* Slider Text Content Container Style */
+    max-width:1280px;
+    margin: 13.5% auto 0;
+}
+#fwslider .title {  /* Slider Title Style */
+	font-family: 'Open Sans', sans-serif;
+	color: #fff;
+	font-size:4em;
+	text-shadow: 0px 5px 5px #333;
+	padding:5px 20px 0;
+	font-style: normal;
+	font-weight: 400;
+	border:none;
+	text-align:left;
+}
+#fwslider .description { /* Slider Description Style */
+	font-family: 'Open Sans', sans-serif;
+    opacity: 0;
+    color:#ffffff;
+    font-size: 2.5em;
+    padding:0px 0 1em;
+    clear:both;
+   	text-align:left;
+   	margin-left: 2%;
+}
+.buttons {
+	padding: 2em;
+	background: rgba(0, 0, 0, 0.14);
+	width: 60%;
+	text-align: center;
+	margin: 123px auto 0;
+	 -moz-box-shadow: inset 0 0 5px #2E2D2D;
+   -webkit-box-shadow: inset 0 0 5px #2E2D2D;
+   box-shadow: inset 0 0 5px #2E2D2D;
+   border-radius:7px;
+}
+.btn {
+	border: none;
+	padding: 18px 60px;
+	display: inline-block;
+	float: left;
+	font-weight: 700;
+	font-size: 1em;
+	outline: none;
+	position: relative;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.btn:after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.btn1 {
+	border: none;
+	padding: 18px 60px;
+	float: right;
+	display: inline-block;
+	font-weight: 700;
+	outline: none;
+	border-radius:4px;
+	position: relative;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.btn1:after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+/* Button 2b */
+.btn-2b:hover {
+	box-shadow: 0 6px #2EB7B9;
+	top: -2px;
+	outline: none;
+	color: #fff;
+}
+
+.btn-2b:active {
+	box-shadow: 0 6px #2EB7B9;
+	top: 6px;
+	outline: none;
+}
+.btn-2 {
+	background: #49CBCD;
+	color: #fff;
+	box-shadow: 0 6px #2EB7B9;
+	-webkit-transition: none;
+	-moz-transition: none;
+	transition: none;
+	outline: none;
+}
+
+/* ------------------------------- 5. Media Query Max Width 719 ------------------------------- */
+@media only screen and (max-width:1366px) {
+    #fwslider .slide_content_wrap { display:block; }
+    #fwslider .timers { display:none; }
+    #fwslider .slide_content {cursor: pointer;}
+    #fwslider .slide_content_wrap {
+	max-width: 1280px;
+	margin: 11.5% auto 0;
+	}
+	#fwslider .title {
+		font-size: 3em;
+		padding: 0px 100px 0;
+	}
+	#fwslider .description {
+		padding: 0px 0.9em 1em;
+	}
+	.buttons p.a a {
+		margin-left: 6em;
+	}
+}
+@media only screen and (max-width: 1280px){
+	  #fwslider .slide_content_wrap { display:block; }
+    #fwslider .timers { display:none; }
+    #fwslider .slide_content {cursor: pointer;}
+    #fwslider .slide_content_wrap {
+	max-width: 1280px;
+	margin: 11.5% auto 0;
+	}
+	#fwslider .title {
+		font-size: 3em;
+		padding: 0px 100px 0;
+	}
+	#fwslider .description {
+		font-size: 2em;
+		margin-left: 6%;
+	}
+	.buttons p.a a {
+		margin-left: 5em;
+	}
+}
+@media only screen and (max-width: 1024px){
+	  #fwslider .slide_content_wrap { display:block; }
+    #fwslider .timers { display:none; }
+    #fwslider .slide_content {cursor: pointer;}
+   #fwslider .title {
+		font-size: 2em;
+		padding: 0px 100px 0;
+	}
+	.buttons p a {
+		width: 14em;
+	}
+	.buttons p.a a {
+		width: 14em;
+		margin-left: 6em;
+	}
+	.buttons {
+		padding: 1em;
+		margin: 70px auto 0;
+	}
+}
+@media only screen and (max-width:768px){
+	 #fwslider .title { font-size:1.5em; }
+     #fwslider .description { /*-- font-size:12px;--*/font-size:1em;margin-left: 11%;}
+	.btn {
+		padding: 16px 30px;
+	}
+	.btn1 {
+		padding: 16px 30px;
+	}
+}
+@media only screen and (max-width:640px){
+	 #fwslider .title { font-size:1.8em; }
+     #fwslider .description { /*-- font-size:12px;--*/font-size: 0.875em;
+	margin-left: 16%;
+	padding: 0.5em 0 0.2em;
+}
+#fwslider .title {
+	padding: 0px 91px 0;
+}
+.buttons {
+	margin: 20px auto 0;
+	width: 72%;
+}
+
+}
+@media only screen and (max-width:480px){
+	 #fwslider .title { font-size:1em; }
+     #fwslider .description { 
+     	font-size: 0.875em;
+		padding: 0.5em 0 0.2em;
+		width: 70%;
+		margin-left: 22%;
+		}
+	#fwslider .slide_content_wrap {
+	max-width: 1280px;
+	margin: 7.5% auto 0;
+	}
+	.btn,.btn1{
+		padding: 14px 12px;
+	}
+	.buttons {
+		margin: 20px auto 0;
+		width: 87%;
+	}
+}
+@media only screen and (max-width:320px){
+	 #fwslider .title { font-size: 1.2em; }
+     #fwslider .description { 
+     	font-size: 0.8em;
+		padding: 0.5em 0 0.2em;
+		width: 90%;
+		margin-left: 18%;
+		}
+	#fwslider .slide_content_wrap {
+	max-width: 1280px;
+	margin: 13.5% auto 0;
+	}
+	#fwslider .slideNext span,#fwslider .slidePrev span{
+		display:none;
+	}
+	#fwslider .title {
+		padding: 0px 56px 0;
+		font-size: 1em;
+	}
+	.buttons {
+		display: none;
+	}
+}

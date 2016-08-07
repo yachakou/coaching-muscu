@@ -1,0 +1,121 @@
+@startuml
+actor Utilisateur
+Utilisateur -> PlanEntrainement: AfficheStatistiques(Utilisateur)
+activate PlanEntrainement
+loop exercice
+PlanEntrainement --> Exercice: statExercice()
+activate Exercice
+PlanEntrainement <-- Exercice: statExercice ok
+deactivate Exercice
+end
+Utilisateur <- PlanEntrainement: AfficheStatistique ok
+deactivate PlanEntrainement
+@enduml
+
+
+@startuml
+actor Utilisateur
+Utilisateur -> PlanEntrainement: Entrer données séance
+activate PlanEntrainement
+loop exercice
+PlanEntrainement --> Exercice: PerformanceExercice (date,seance)
+activate Exercice
+Exercice --> Exercice : EnregistrementData(date,seance)
+Exercice --> PlanEntrainement : Enregistrement OK
+deactivate Exercice
+end
+PlanEntrainement --> Utilisateur: Enregistrement OK
+deactivate PlanEntrainement
+@enduml
+
+@startuml
+actor Utilisateur
+Utilisateur -> PlanEntrainement : AffichagePlanEntrainement
+activate PlanEntrainement
+loop exercice
+PlanEntrainement -> Exercice: affichageExercice()
+activate Exercice
+PlanEntrainement <- Exercice: affichageExercice ok
+deactivate Exercice
+end
+Utilisateur <- PlanEntrainement : AffichagePlanEntrainement ok
+deactivate PlanEntrainement
+@enduml
+
+@startuml
+actor Utilisateur
+Utilisateur -> PlanEntrainement : ajouterExercice(titre, description, temps)
+activate PlanEntrainement #FFBBBB
+PlanEntrainement -> PlanEntrainement : addExercice(titre, description, temps)
+activate PlanEntrainement
+deactivate PlanEntrainement
+PlanEntrainement -> Utilisateur: ajoutExercice ok
+deactivate PlanEntrainement
+@enduml
+
+@startuml
+actor Utilisateur
+Utilisateur -> PlanEntrainement : creerProgramme(difficulté, durée)
+activate PlanEntrainement
+PlanEntrainement -> Utilisateur: creerProgramme ok
+deactivate PlanEntrainement
+@enduml
+
+@startuml
+actor Utilisateur
+Utilisateur -> Utilisateur : ModifierDonneesUtilisateur()
+@enduml
+
+
+@startuml
+actor Utilisateur
+Utilisateur -> Utilisateur: supprimerProfil()
+destroy Utilisateur
+@enduml
+
+@startuml
+actor Utilisateur
+Utilisateur -> PlanEntrainement : getNbExercice()
+activate PlanEntrainement #FFBBBB
+PlanEntrainement -> Utilisateur : nbExercice
+loop nbExercice
+Utilisateur -> PlanEntrainement : genererExercice()
+PlanEntrainement -> Exercice : getStatExercice()
+activate Exercice
+Exercice -> PlanEntrainement : returnStatExo
+deactivate Exercice
+PlanEntrainement -> Exercice : generationExercice(statistique)
+activate Exercice
+Exercice -> PlanEntrainement : exercice generé
+deactivate Exercice
+PlanEntrainement -> Utilisateur : ProposeExercice
+alt accepte exercice
+Utilisateur -> PlanEntrainement : exerciceAccepté
+PlanEntrainement -> PlanEntrainement : addExerciceGeneré()
+activate PlanEntrainement
+PlanEntrainement -> Utilisateur : exerciceGeneréAjouté
+deactivate PlanEntrainement
+else refuse exercice
+Utilisateur -> PlanEntrainement : refutExercice
+PlanEntrainement -> Exercice : detruireExerciceGeneré()
+activate Exercice #FFBBBB
+Exercice -> Exercice : destruction()
+activate Exercice
+destroy Exercice
+deactivate Exercice
+deactivate Exercice
+end
+end
+deactivate PlanEntrainement
+@enduml
+
+@startuml
+actor Utilisateur
+Utilisateur -> PlanEntrainement : supprimerExercice
+activate PlanEntrainement#FFBBBB
+PlanEntrainement -> PlanEntrainement: removeExercice(Exercice)
+activate PlanEntrainement
+deactivate PlanEntrainement
+PlanEntrainement -> Utilisateur : exerciceSupprimé
+deactivate PlanEntrainement
+@enduml

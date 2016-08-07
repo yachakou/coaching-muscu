@@ -1,0 +1,42 @@
+@startuml
+
+(s'identifier) as (Use1)
+
+User -> (Use1)
+
+rectangle dashboard {
+User -> (Generer un plan d'entrainement)
+User -> (definir un plan d'entrainement)
+User -> (Recuperer le prochain exercice du plan d'entrainement)
+User-> (Enregistrer des seances d'exercices)
+User -> (Creer un exercice)
+User -> (Visualiser les statistiques)
+User -> (Mettre a jour les donnees )
+}
+(Use1) <. (s'enregistrer) : extends
+(Use1) <. (Generer un plan d'entrainement) : include
+(Use1) <. (definir un plan d'entrainement) : include
+(Use1) <. (Recuperer le prochain exercice du plan d'entrainement) : include
+(Use1) <. (Enregistrer des seances d'exercices) : include
+(Use1) <. (Creer un exercice) : include
+(Use1) <. (Visualiser les statistiques) : include
+(Use1) <. (Mettre a jour les donnees) : include
+
+
+note right of (definir un plan d'entrainement)
+  L'utilisateur crée son propre plan d'entrainement
+  en lui associant une série d'exercice
+end note
+
+
+note right of (Generer un plan d'entrainement)
+ Le système propose à l'utilisateur
+ un plan d'entrainement en fonction
+ des performances de l'utilisateur
+end note
+
+note right of (Mettre a jour les donnees)
+    L'utilisateur met à jour ces données
+    ( temps de sommeil, poids et objectifs...)
+end note
+@enduml

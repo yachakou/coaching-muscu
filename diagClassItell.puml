@@ -1,0 +1,118 @@
+@startuml
+
+
+
+class Utilisateur{
+-plans : List<PlanEntrainement>
+-nom : String
+-prenom : String
+-mail : String
+-login : String
+-mot de passe : String
+-sexe : Sexe
+-date de naissance : Date
+-taille : float
+-poids : float
+-sommeil : int
+-poidsObjectif : float
++Utilisateur(String,String,String,Sexe,String,int,float)
++getPoids() : float
++setPoids(float)
++getSommeil() : int
++setSommeil(int) :
++getPoidsObjectif() : float
++setPoidsObjectif(float)
++getNom() : String
++getPrenom() : String
++getMail() : String
++getMotDePasse() : String
++setMotDepasse(String)
++getSexe() : Sexe
++getDateDeNaissance() : Date
++getTaille() : float
++affichePlanEntrainement()
++afficheStatistiques()
++ajouterExercice(String,Strin,int)
++creerProgramme(String,int)
++entrerDonneesSceance()
++genererExercice()
++exerciceAcepte(AbstractExercice)
++exerciceRefuse(AbstractExercice)
++modifierDonneesUtilisateur()
++supprimerProfil()
++supprimerExercice(AbstractExercice)
+}
+
+class PlanEntrainement {
+-difficulte : float
+-duree : Date
+-exercices : List<AbstractExercice>
++getDifficulte() : float
++setDifficulte(float)
++getDuree() : Date
++setDuree(Date)
++addExercice(String,String,int)
++addExerciceGenere(AbstractExercice)
++removeExercice(AbstractExercice)
+}
+
+class Authentification {
+{static} url : String
+{static} login : String
+{static} passeword : String
+{static} cx : Connection
++Authentification()
++Connection()
+}
+
+abstract class AbstractExercices {
+-titre : String
+-description : String
+-duree : int
+ +AbstractExercices (String,String,int)
+ +getTitre() : String
+ +setTitre(String)
+ +getDesc() : String
+ +setDesc(String) 
+ +getDuree() : int
+}
+
+enum Sexe{
+HOMME
+FEMME
+}
+
+class Aerobis{
+-distance : float
++Aerobis(String,String,int)
++getDistance() : float
+}
+
+class Anaerobis{
+-repetition : int
++Anaerobis(String,String,int)
++getRepetition() : int
+}
+
+interface Iservice {
++affichePlanEntrainement()
++afficheStatistiques()
++ajouterExercice(String,Strin,int)
++creerProgramme(String,int)
++entrerDonneesSceance()
++genererExercice()
++exerciceAcepte(AbstractExercice)
++exerciceRefuse(AbstractExercice)
++modifierDonneesUtilisateur()
++supprimerProfil()
++supprimerExercice(AbstractExercice)
+}
+
+Iservice <|-- Utilisateur
+AbstractExercices <|--  Aerobis
+AbstractExercices <|--  Anaerobis
+
+Utilisateur o-- PlanEntrainement
+PlanEntrainement o-- AbstractExercices
+
+@enduml

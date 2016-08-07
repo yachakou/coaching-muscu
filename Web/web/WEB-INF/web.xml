@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <servlet>
+        <servlet-name>Faces Servlet</servlet-name>
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Faces Servlet</servlet-name>
+        <url-pattern>*.xhtml</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ControlleurLogin</servlet-name>
+        <servlet-class>Controlleur.ControlleurLogin</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>ControlleurInscription</servlet-name>
+        <servlet-class>Controlleur.ControlleurInscription</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>ControlleurDeconnexion</servlet-name>
+        <servlet-class>Controlleur.ControlleurDeconnexion</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControlleurActif</servlet-name>
+        <servlet-class>Controlleur.ControlleurActif</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>ControlleurAjoutExercice</servlet-name>
+        <servlet-class>Controlleur.ControlleurAjoutExercice</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControlleurProfile</servlet-name>
+        <servlet-class>Controlleur.ControlleurProfile</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControlleurAjoutPlanEntrainement</servlet-name>
+        <servlet-class>Controlleur.ControlleurAjoutPlanEntrainement</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControlleurStatistique</servlet-name>
+        <servlet-class>Controlleur.ControlleurStatistique</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControlleurSuppressionPlan</servlet-name>
+        <servlet-class>Controlleur.ControlleurSuppressionPlan</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControlleurSuppressionExercice</servlet-name>
+        <servlet-class>Controlleur.ControlleurSuppressionExercice</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControlleurSaisieExo</servlet-name>
+        <servlet-class>Controlleur.ControlleurSaisieExo</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControlleurGenerationPlan</servlet-name>
+        <servlet-class>Controlleur.ControlleurGenerationPlan</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+    <servlet-name>ControlleurLogin</servlet-name>
+    <url-pattern>/ControlleurLogin</url-pattern>
+</servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ControlleurInscription</servlet-name>
+        <url-pattern>/ControlleurInscription</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ControlleurDeconnexion</servlet-name>
+        <url-pattern>/ControlleurDeconnexion</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ControlleurSaisieExo</servlet-name>
+        <url-pattern>/ControlleurSaisieExo</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet-mapping>
+        <servlet-name>ControlleurActif</servlet-name>
+        <url-pattern>/ControlleurActif</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ControlleurAjoutExercice</servlet-name>
+        <url-pattern>/ControlleurAjoutExercice</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ControlleurProfile</servlet-name>
+        <url-pattern>/ControlleurProfile</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ControlleurAjoutPlanEntrainement</servlet-name>
+        <url-pattern>/ControlleurAjoutPlanEntrainement</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControlleurStatistique</servlet-name>
+        <url-pattern>/ControlleurStatistique</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControlleurSuppressionPlan</servlet-name>
+        <url-pattern>/ControlleurSuppressionPlan</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ControlleurSuppressionExercice</servlet-name>
+        <url-pattern>/ControlleurSuppressionExercice</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ControlleurGenerationPlan</servlet-name>
+        <url-pattern>/ControlleurGenerationPlan</url-pattern>
+    </servlet-mapping>
+
+
+</web-app>
